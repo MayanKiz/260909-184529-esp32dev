@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Smart Dustbin",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-c-v4",
+      "id": "esp",
+      "top": -124.8,
+      "left": 264.04,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic",
+      "top": 89.6,
+      "left": -18.4,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "ultrasonic:VCC", "esp:VIN", "red", [ "h0" ] ],
+    [ "ultrasonic:GND", "esp:GND.1", "black", [ "h0" ] ],
+    [ "ultrasonic:TRIG", "esp:D5", "green", [ "h0" ] ],
+    [ "ultrasonic:ECHO", "esp:D18", "blue", [ "h0" ] ]
+  ],
+  "dependencies": {}
+}
